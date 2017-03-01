@@ -2,6 +2,7 @@ package com.wpg.demo.spring.javaconfig.workorder.controller;
 
 import com.wpg.demo.spring.javaconfig.ApplicationTestConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MockMvc;
@@ -14,6 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @author ChangWei Li
  * @version 2017-03-01 09:50
  */
+@Ignore
 public class WorkOrderControllerTest extends ApplicationTestConfig {
 
     @Autowired
