@@ -1,26 +1,29 @@
-group 'com.wpg.demo.spring'
-version '1.0-SNAPSHOT'
+group "com.wpg.demo.spring"
+version "1.0-SNAPSHOT"
 
-apply plugin: 'java'
-apply plugin: 'jacoco'
+apply plugin: "java"
+apply plugin: "jacoco"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+ext {
+    springVersion = "4.3.6.RELEASE"
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile("org.springframework:spring-context:4.3.6.RELEASE")
-    compile("org.springframework:spring-context-support:4.3.6.RELEASE")
-    compile("org.springframework:spring-aop:4.3.6.RELEASE")
-    compile("org.springframework:spring-jdbc:4.3.6.RELEASE")
-    compile("org.springframework:spring-tx:4.3.6.RELEASE")
+    compile("org.springframework:spring-context:${springVersion}")
+    compile("org.springframework:spring-context-support:${springVersion}")
+    compile("org.springframework:spring-aop:${springVersion}")
+    compile("org.springframework:spring-jdbc:${springVersion}")
+    compile("org.springframework:spring-tx:${springVersion}")
 
-    compile("org.springframework:spring-web:4.3.6.RELEASE")
-    compile("org.springframework:spring-webmvc:4.3.6.RELEASE")
+    compile("org.springframework:spring-web:${springVersion}")
+    compile("org.springframework:spring-webmvc:${springVersion}")
     compile("org.apache.tomcat.embed:tomcat-embed-core:8.5.11")
     compile("org.apache.tomcat.embed:tomcat-embed-logging-juli:8.5.2")
 
@@ -51,7 +54,8 @@ dependencies {
 
 jacocoTestReport {
     reports {
-        xml.enabled = true // coveralls plugin depends on xml format report
-        html.enabled = false
+        xml.enabled true // coveralls plugin depends on xml format report
+        html.enabled true
+        html.destination "${buildDir}/jacocoHtml"
     }
 }
