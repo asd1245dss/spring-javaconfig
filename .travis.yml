@@ -7,7 +7,6 @@ addons:
     packages:
       - oracle-java8-installer
 script:
-  - gradle check
-  - gradle codeCoverageReport
+  - gradle check codeCoverageReport
 after_success:
   - bash <(curl -s https://codecov.io/bash)
